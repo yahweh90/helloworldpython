@@ -1,13 +1,13 @@
 from wsgiref.simple_server import make_server
-from pyramid.config import Configurator
-from pyramid.response import Response
+from pyramid.config import configurator
+from pyramid.response import response
 import os
 
 def hello_world(request):
     name = os.environ.get('NAME')
     if name == None or len(name) == 0:
-        name = "Arch"
-    message = "Welcome, " + name + "!\n"
+        name = "world"
+    message = "Hello, " + name + "!\n"
     return Response(message)
 
 if __name__ == '__main__':
